@@ -26,6 +26,7 @@ public class ClientGUI extends JFrame {
   public static final String PERSONINJURE = "Personal Injury Protection";
   public static final String PROPERTY = "Property Damage Liability";
   public static final String COMPREHENSIVE = "Comprehensive Coverage";
+  public static final String LUXURYCAR = "LuxuryCarInsurance";
 
 
   public ClientGUI() {
@@ -43,6 +44,7 @@ public class ClientGUI extends JFrame {
 	  cmbInsuranceType.addItem(PERSONINJURE);
 	  cmbInsuranceType.addItem(PROPERTY);
 	  cmbInsuranceType.addItem(COMPREHENSIVE);
+	  cmbInsuranceType.addItem(LUXURYCAR);
 
 	  lblInsureType = new JLabel("Insurance Types");
 
@@ -140,6 +142,9 @@ public class ClientGUI extends JFrame {
 			}
 			else if (type.equals(COMPREHENSIVE)) {
 				pp= new ComPolicy();
+		    }
+			else if (type.equals(LUXURYCAR)) {
+				pp= new LuxuryCarPolicy();
 		    }
 
 		    AutoInsurance ai = pp.getInsurObj();
